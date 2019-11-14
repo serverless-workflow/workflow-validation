@@ -32,6 +32,14 @@ public class TestWorkflowValidator implements WorkflowValidator {
     }
 
     @Override
+    public void setJson(String jsonString) {
+    }
+
+    @Override
+    public void setYaml(String yamlString) {
+    }
+
+    @Override
     public List<ValidationError> validate() {
         return null;
     }

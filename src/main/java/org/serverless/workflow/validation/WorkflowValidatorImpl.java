@@ -48,6 +48,8 @@ public class WorkflowValidatorImpl implements WorkflowValidator {
     private List<ValidationError> validationErrors = new ArrayList<>();
     private Schema workflowSchema = WorkflowSchemaLoader.getWorkflowSchema();
     private WorkflowManager workflowManager;
+    private String jsonString;
+    private String yamlString;
 
     @Override
     public void reset() {
@@ -62,6 +64,17 @@ public class WorkflowValidatorImpl implements WorkflowValidator {
         this.workflowManager = workflowManager;
         return this;
     }
+
+    @Override
+    public void setJson(String jsonString) {
+        this.jsonString = jsonString;
+    }
+
+    @Override
+    public void setYaml(String yamlString) {
+        this.yamlString = yamlString;
+    }
+
 
     @Override
     public List<ValidationError> validate() {
